@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+	<title>Tic Tac Toe!</title>
+</head>
+<body>
+	<div id="game"></div>
+	<script src="jquery.js"></script>
+	<script>
+	$(function() {
+		var board = [['','',''] ,['','',''], ['','','']]
+		var player = 'x'
+
+		renderBoard()
+
+		function renderBoard() {
+			$('#game').empty()
+
+			board.forEach(function(row) {
+				var $row = $('<div class="row" />').appendTo($('#game'))
+				row.forEach(function(cell) {
+					$row.append($('<div class="cell">'+cell+'</div>'))
+				})
+			})
+
+			$('#game')
+				.find('.cell').css({ width:40, height:40, background:'red', border:'1px solid #fff', display:'inline-block', verticalAlign:'top' }).end()
+		}
+
+		$(document).on('click', '.cell', function() {
+			if ($(this).html()) { return }
+			$(this).html(player)
+			player = (player == 'x' ? 'o' : 'x')
+		})
+	})
+	</script>
+</body>
+</html>
