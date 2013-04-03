@@ -1,0 +1,32 @@
+
+
+# Git stuff
+
+	git clone <url>
+	git status
+	git add index.html
+	git commit -m 'first commit!'
+	git push origin master
+	git pull origin master
+
+# DB stuff
+	
+Install
+
+	# Install brew
+	mkdir homebrew && curl -L https://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C homebrew
+
+	# Install mysql
+	brew install mysql
+	unset TMPDIR
+	mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)" --datadir=/usr/local/var/mysql --tmpdir=/tmp
+
+Setup
+
+	cat schema.sql | mysql -u root
+	mysql -u root tictactoe
+	SELECT * FROM player;
+	INSERT INTO PLAYER (name) VALUES ('chris');
+	INSERT INTO PLAYER (name) VALUES ('marcus');
+
+# web server stuff
