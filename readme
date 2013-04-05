@@ -1,4 +1,9 @@
 
+# Suggested TODO
+
+	1) Write schema for tic tac toe game state
+	1) Serve index.html from a node.js http server (probably use express node module)
+	1) Connect from node http server to mysql database
 
 # Git stuff
 
